@@ -1,1 +1,54 @@
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
+app = FastAPI()
+@app.get("/items/{id}", response_class=HTMLResponse)
+async def read_root():
+    return html_content
+
+
+
+
+html_content="""
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Get and Insert</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <head>
+        <style>
+            .button {
+              border: none;
+              color: rgb(112, 89, 89);
+              text-align: center;
+              padding: 16px 32px;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+            
+            .button1 {background-color: #e1bfdf;} 
+            .button2 {background-color: #6f5e4c;}
+            </style>
+    </head>
+    <body>
+        <label for="query">Enter your query:</label><br><br>
+        <input type="text" id="query" placeholder="Query"><br><br>
+        <button class="button button1" onclick="Get()">GET</button>
+        <button class="button button2" onclick="Insert()">INSERT</button>
+        <button class="button button2">Insert</button>
+        <div id="Area">Output will appear here...</div>
+        <script>
+            function Get() {
+
+            }
+            function Insert() {
+                
+            }
+        </script>
+    </body>
+</html>
